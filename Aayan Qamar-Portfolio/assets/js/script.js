@@ -82,18 +82,7 @@ if (!reducedMotion && window.gsap) {
     duration: .75,
     scrollTrigger: { trigger: '.proof-bar', start: 'top 88%', once: true }
   });
-  document.querySelectorAll('.proof-grid strong').forEach((number) => {
-    const value = parseFloat(number.textContent);
-    const suffix = number.textContent.replace(/[\d.]/g, '');
-    const state = { value: 0 };
-    gsap.to(state, {
-      value,
-      duration: 1.45,
-      ease: 'power2.out',
-      onUpdate: () => { number.textContent = `${Math.round(state.value)}${suffix}`; },
-      scrollTrigger: { trigger: number, start: 'top 90%', once: true }
-    });
-  });
+
 
   gsap.from('.problem-card', {
     x: 50,
